@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, useSyncExternalStore } from 'react';
 import AdminDashboard from './components/Dashboard/AdminDashboard';
 import EmployeeDashboard from './components/Dashboard/EmployeeDashboard';
 import Login from './components/Auth/login.jsx'
@@ -21,19 +21,30 @@ const App =()=>{
 
 //for handling login page
 const [user,setUser]=useState(null)
-
+const [loggedInUserData,setloggedInUserData]=useState(null)
 
 const authData=useContext(AuthContext)
 
+// useEffect(()=>{
+//    if(authData){
+//     const loggedInUser=localStorage.getItem("loggedInUser")
+//     if(loggedInUser){
+//         setUser(loggedInUser.role)
+//     }
+//    }
+// },[authData]);
 
 const handleLogin=(email,password)=>{
-    if(email=='admin@gmail.com'&& password=='123'){
+    if(email=='admin@gmail.coma'&& password=='123'){
      setUser('admin')
-     
+     localStorage.setItem('loggedInUser',JSON.stringyfy({role:'admin'}))
     
-}else if(authData && authData.employees.find((e)=>email==e.email&&e.password==password)){
+}else if(authData){
+    const employee=  authData.employees.find((e)=>email==e.email&&e.password==password)
+    if(employee){
     setUser('employee')
-   
+    localStorage.setItem('loggedInUser',JSON.stringyfy({role:'employee'}))
+}
 }
 else{
     alert("Invalid Credentials")
