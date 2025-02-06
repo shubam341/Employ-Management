@@ -1,8 +1,9 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import AdminDashboard from './components/Dashboard/AdminDashboard';
 import EmployeeDashboard from './components/Dashboard/EmployeeDashboard';
 import Login from './components/Auth/login.jsx'
+import { AuthContext } from './pages/AuthProvider.jsx';
 
 // import { setLocalStorage,getLocalStorage } from './utils/localstorage.jsx';
 
@@ -23,10 +24,11 @@ const [user,setuser]=useState(null)
 const handleLogin=(email,password)=>{
     if(email=='admin@gmail.com'&& password=='123'){
      setuser('admin')
-     console.log(user)
+     
+    
 }else if(email=='user@gmail.com'&& password=='123'){
     setuser('employee')
-    console.log(user)
+   
 }
 else{
     alert("Invalid Credentials")
@@ -34,7 +36,8 @@ else{
 }
 
 
-
+const data=useContext(AuthContext)
+console.log(data)
 
 
     return (     <>
