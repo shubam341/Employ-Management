@@ -39,7 +39,7 @@ else{
 
     return (     <>
       {!user ? <Login handleLogin={handleLogin}/>: ''}
-     {user =='admin'?<AdminDashboard/>:<EmployeeDashboard/>}
+     {user =='employee'?<EmployeeDashboard/>:<AdminDashboard/>}
   
     </>
     )
