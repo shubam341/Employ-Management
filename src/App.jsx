@@ -20,19 +20,19 @@ const App =()=>{
 
 
 //for handling login page
-const [user,setuser]=useState(null)
+const [user,setUser]=useState(null)
 
 
 const authData=useContext(AuthContext)
-console.log(authData.employees)
+
 
 const handleLogin=(email,password)=>{
     if(email=='admin@gmail.com'&& password=='123'){
-     setuser('admin')
+     setUser('admin')
      
     
-}else if(authData){
-    setuser('employee')
+}else if(authData && authData.employees.find((e)=>email==e.email&&e.password==password)){
+    setUser('employee')
    
 }
 else{
