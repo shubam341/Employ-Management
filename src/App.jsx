@@ -10,20 +10,11 @@ import { AuthContext } from './pages/AuthProvider.jsx';
 
 
 const App =()=>{
-  
-    // For data storage 
-//     useEffect(()=>{
-//         setLocalStorage()
-//         getLocalStorage()
-// },
-// )
-
 
 //for handling login page
 const [user,setUser]=useState(null)
 const [loggedInUserData,setloggedInUserData]=useState(null)
-
-const authData=useContext(AuthContext)
+const authData=useContext(AuthContext);
 
 // useEffect(()=>{
 //    if(authData){
@@ -35,18 +26,20 @@ const authData=useContext(AuthContext)
 // },[authData]);
 
 const handleLogin=(email,password)=>{
-    if(email=='admin@gmail.coma'&& password=='123'){
+    if(email=='admin@gmail.com'&& password=='123'){
      setUser('admin')
-     localStorage.setItem('loggedInUser',JSON.stringyfy({role:'admin'}))
+     localStorage.setItem('loggedInUser',JSON.stringify({role:'admin'}))
     
 }else if(authData){
     const employee=  authData.employees.find((e)=>email==e.email&&e.password==password)
     if(employee){
     setUser('employee')
-    localStorage.setItem('loggedInUser',JSON.stringyfy({role:'employee'}))
+    setloggedInUserData(employee)
+    localStorage.setItem('loggedInUser',JSON.stringify({role:'employee'}))
+     return;
 }
-}
-else{
+
+
     alert("Invalid Credentials")
 }
 }
@@ -57,8 +50,8 @@ else{
 
     return (     <>
    {!user ? <Login handleLogin={handleLogin} /> : null}
-{user === "employee" && <EmployeeDashboard />}
-{user === "admin" && <AdminDashboard />}
+   {user === "employee" ? <EmployeeDashboard data={loggedInUserData} /> : null}
+   {user === "admin" && <AdminDashboard />}
 
     </>
     )

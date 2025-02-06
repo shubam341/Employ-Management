@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { createContext, useEffect, useState } from 'react'; //  Import React & createContext properly
-import { getLocalStorage } from '../utils/localstorage';
+import { getLocalStorage, setLocalStorage } from '../utils/localstorage';
 
 
 // eslint-disable-next-line react-refresh/only-export-components
@@ -14,6 +14,7 @@ const AuthProvider = ({ children }) => {
     const[userData,setUserData]=useState(null)
       
     useEffect(()=>{
+        setLocalStorage()
         const {employees,admin}=getLocalStorage()
       setUserData({employees,admin})
      
