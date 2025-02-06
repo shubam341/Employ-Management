@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 const Login=({handleLogin})=>{
 
-
+      
       const [email,setEmail]=useState('')
       const [password,setPassword]=useState('')
     
@@ -18,7 +18,8 @@ const Login=({handleLogin})=>{
     return ( 
    <div className='flex h-screen w-screen items-center justify-center'>
     <div className='border-2 rounded-xl border-emerald-600 p-20'>
-        
+    <h2 className="text-5xl  bg-transparent  border-none outline-none font-bold text-center   text-emerald-600  mb-8">Login</h2>
+
         <form 
         onSubmit={(e)=>{
            submitHandler(e)
