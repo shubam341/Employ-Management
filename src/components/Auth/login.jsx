@@ -1,16 +1,16 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 
-const Login=()=>{
-  
+const Login=({handleLogin})=>{
+
+
       const [email,setEmail]=useState('')
       const [password,setPassword]=useState('')
     
       const submitHandler=(e)=>{
         e.preventDefault()
-   console.log("email is",email)
-   console.log("passwordl is",password)
-   
+
+     handleLogin(email,password)   
    setEmail("")
     setPassword("")
    
