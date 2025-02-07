@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 /* eslint-disable react/prop-types */
 
 // eslint-disable-next-line no-unused-vars
@@ -11,11 +12,29 @@ const TaskkList=({data})=>{
   console.log(data)
     return(
         <div  id='tasklist'className='h-[55%] overflow-x-auto w-full py-5 flex items-center justify-start gap-5 flex-nowrap mt-10'>
-            <AcceptTask/>
-          <NewTask/>
+           
+           {data.tasks.map((elem)=>{
+              if(elem.active){
+                return   <AcceptTask/>
+              }
+              if(elem.newTask){
+                return  <NewTask/>
+              }
+              
+              if(elem.completed){
+                return  <CompleteTask/>
+              }
 
-         <CompleteTask/>
-         <FailedTask/>  
+                
+              if(elem.failed){
+                return <FailedTask/>
+              }
+
+           })}
+           
+
+         
+           
     
         </div>
 
