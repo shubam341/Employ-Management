@@ -12,9 +12,9 @@ const AcceptTask=()=>{
             </div>
             <h2 className=' text-white mt-5 text-2xl font-semibold'>Make a youtube video</h2>
                <p className=' mt-2 text-white text-sm'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, eveniet cum officia expedita dolores ipsam.</p>
-           <div className='felx justify-between mt-4'>
-            <button className='bg-green-500 py-1 px-2 text-sm'>Mark as Completed</button>
-            <button className='bg-red-500 py-1 px-2 text-sm'>Mark as failed</button>
+           <div className='felx  space-x-4 justify-between mt-4'>
+            <button className='bg-green-500   py-1 px-1 text-sm'>Mark as Completed</button>
+            <button className='bg-red-500  py-1 px-3 text-sm'>Mark as failed</button>
            </div>
             </div>
            
