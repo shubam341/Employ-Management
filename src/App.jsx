@@ -31,7 +31,7 @@ const handleLogin=(email,password)=>{
     if(email=='admin@gmail.com'&& password=='123'){
         const adminData = { role: 'admin' };
         setUser(adminData.role);
-     localStorage.setItem('loggedInUser',JSON.stringify({adminData }))
+     localStorage.setItem('loggedInUser',JSON.stringify(adminData ))
     
 }else if(authData){
     const employee=  authData.employees.find((e)=>email==e.email&&e.password==password)
@@ -39,7 +39,7 @@ const handleLogin=(email,password)=>{
         const employeeData = { role: 'employee', data: employee };
         setUser(employeeData.role);
     setloggedInUserData(employee)
-    localStorage.setItem('loggedInUser',JSON.stringify({employeeData,data:employee}))
+    localStorage.setItem('loggedInUser',JSON.stringify(employeeData))
      return;
 }
 
