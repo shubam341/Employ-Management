@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-key */
 /* eslint-disable react/prop-types */
 
@@ -9,25 +10,25 @@ import CompleteTask from './CompleteTask';
 import FailedTask from './FailedTask';
 
 const TaskkList=({data})=>{
-  console.log(data)
+ 
     return(
         <div  id='tasklist'className='h-[55%] overflow-x-auto w-full py-5 flex items-center justify-start gap-5 flex-nowrap mt-10'>
            
-           {data.tasks.map((elem)=>{
+           {data.tasks.map((elem,idx)=>{
               if(elem.active){
-                return   <AcceptTask/>
+                return   <AcceptTask key={idx}/>
               }
               if(elem.newTask){
-                return  <NewTask/>
+                return  <NewTask key={idx}/>
               }
               
               if(elem.completed){
-                return  <CompleteTask/>
+                return  <CompleteTask key={idx}/>
               }
 
                 
               if(elem.failed){
-                return <FailedTask/>
+                return <FailedTask key={idx}/>
               }
 
            })}
