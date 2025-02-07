@@ -1,8 +1,6 @@
 /* eslint-disable no-unused-vars */
-/* eslint-disable react/jsx-key */
-/* eslint-disable react/prop-types */
 
-// eslint-disable-next-line no-unused-vars
+/* eslint-disable react/prop-types */
 import React from 'react';
 import AcceptTask from './AcceptTask';
 import NewTask from './NewTask';
@@ -16,19 +14,19 @@ const TaskkList=({data})=>{
            
            {data.tasks.map((elem,idx)=>{
               if(elem.active){
-                return   <AcceptTask key={idx}/>
+                return   <AcceptTask key={idx} data={elem}/>
               }
               if(elem.newTask){
-                return  <NewTask key={idx}/>
+                return  <NewTask key={idx} data={elem}/>
               }
               
               if(elem.completed){
-                return  <CompleteTask key={idx}/>
+                return  <CompleteTask key={idx} data={elem} />
               }
 
                 
               if(elem.failed){
-                return <FailedTask key={idx}/>
+                return <FailedTask key={idx} data={elem} />
               }
 
            })}
