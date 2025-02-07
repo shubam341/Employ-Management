@@ -14,9 +14,9 @@ const employees = [
         "category": "Finance",
         "active": true,
         "newtask": false,
-        "completed": false,
+        "completed": true,
         "failed": false,
-        "taskCount": { "active": 1, "newtask": 0, "completed": 0, "failed": 0 }
+        "taskCount": { "active": 1, "newtask": 0, "completed": 1, "failed": 0 }
       },
       {
         "title": "Team Meeting",
@@ -25,9 +25,9 @@ const employees = [
         "category": "Meetings",
         "active": true,
         "newtask": true,
-        "completed": false,
+        "completed": true,
         "failed": false,
-        "taskCount": { "active": 1, "newtask": 1, "completed": 0, "failed": 0 }
+        "taskCount": { "active": 1, "newtask": 1, "completed": 1, "failed": 0 }
       }
     ]
   },
@@ -46,7 +46,7 @@ const employees = [
         "newtask": false,
         "completed": true,
         "failed": false,
-        "taskCount": { "active": 1, "newtask": 0, "completed": 1, "failed": 0 }
+        "taskCount": { "active": 1, "newtask": 2, "completed": 1, "failed": 0 }
       },
       {
         "title": "Bug Fixing",
@@ -114,10 +114,10 @@ const employees = [
         "date": "2025-02-17",
         "category": "Logistics",
         "active": true,
-        "newtask": true,
+        "newtask": false,
         "completed": false,
         "failed": false,
-        "taskCount": { "active": 1, "newtask": 1, "completed": 0, "failed": 0 }
+        "taskCount": { "active": 1, "newtask": 0, "completed": 0, "failed": 0 }
       },
       {
         "title": "Supplier Meeting",
@@ -126,9 +126,9 @@ const employees = [
         "category": "Supply Chain",
         "active": true,
         "newtask": false,
-        "completed": true,
+        "completed": false,
         "failed": false,
-        "taskCount": { "active": 1, "newtask": 0, "completed": 1, "failed": 0 }
+        "taskCount": { "active": 1, "newtask": 0, "completed": 0, "failed": 0 }
       },
       {
         "title": "Budget Planning",
@@ -140,7 +140,19 @@ const employees = [
         "completed": false,
         "failed": true,
         "taskCount": { "active": 0, "newtask": 0, "completed": 0, "failed": 1 }
-      }
+      },
+      {
+        "title": "Budget Planning",
+        "description": "Prepare next quarter’s budget proposal.",
+        "date": "2025-02-19",
+        "category": "Finance",
+        "active": false,
+        "newtask": false,
+        "completed": true,
+        "failed": false,
+        "taskCount": { "active": 0, "newtask": 0, "completed": 1, "failed": 0}
+      },
+    
     ]
   },
   {
@@ -155,10 +167,10 @@ const employees = [
         "date": "2025-02-20",
         "category": "Customer Support",
         "active": true,
-        "newtask": true,
+        "newtask": false,
         "completed": false,
         "failed": false,
-        "taskCount": { "active": 1, "newtask": 1, "completed": 0, "failed": 0 }
+        "taskCount": { "active": 1, "newtask": 0, "completed": 0, "failed": 0 }
       },
       {
         "title": "Product Testing",
@@ -170,6 +182,17 @@ const employees = [
         "completed": true,
         "failed": false,
         "taskCount": { "active": 1, "newtask": 0, "completed": 1, "failed": 0 }
+      },
+      {
+        "title": "Supplier Meeting",
+        "description": "Negotiate contracts with new suppliers.",
+        "date": "2025-02-18",
+        "category": "Supply Chain",
+        "active": false,
+        "newtask": true,
+        "completed": false,
+        "failed": false,
+        "taskCount": { "active": 0, "newtask": 1, "completed": 0, "failed": 0 }
       }
     ]
   }

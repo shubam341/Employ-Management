@@ -1,6 +1,8 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from 'react'
-const CompleteTask=(data)=>{
+
+const CompleteTask=({data})=>{
     return(
         <div className=' flex-shrink-0 h-full p-5 w-[300px] bg-green-400 rounded-xl'>
         <div className=' text-white flex justify-between items-center'>
@@ -10,7 +12,7 @@ const CompleteTask=(data)=>{
       <h2 className=' text-white mt-5 text-2xl font-semibold'>{data.title}</h2>
          <p className=' mt-2 text-white text-sm'>{data.description}.</p>
          <div className='mt-2'>
-            <button className='w-full'>Complete</button>
+            <button className='w-full bg-green-500 rounded font-medium py-1 px-2 text-xs'>Complete</button>
          </div>
       </div>
 

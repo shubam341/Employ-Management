@@ -1,7 +1,7 @@
-/* eslint-disable react/prop-types */
+
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
-import { setLocalStorage } from '../../utils/localstorage';
+// import { setLocalStorage } from '../../utils/localstorage';
 
 const Header=()=>{
  

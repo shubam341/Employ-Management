@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from "react";
 
-const NewTask=(data)=>{
+const NewTask=({data})=>{
   console.log()
     return (
   
@@ -13,7 +14,7 @@ const NewTask=(data)=>{
       <h2 className=' text-white mt-5 text-2xl font-semibold'>{data.title}</h2>
          <p className=' mt-2 text-white text-sm'>{data.description}.</p>
       <div className="mt-4">
-        <button>Accept Task</button>
+        <button className="bg-blue-500 rounded font-medium py-1 px-2 text-xs">Accept Task</button>
       </div>
       </div>
     )
