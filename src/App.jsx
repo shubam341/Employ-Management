@@ -16,26 +16,30 @@ const [user,setUser]=useState(null)
 const [loggedInUserData,setloggedInUserData]=useState(null)
 const authData=useContext(AuthContext);
 
-useEffect(()=>{
-    const loggedInUser=localStorage.getItem('LoggedInUser')
-  if(loggedInUser ){
-    const userData=JSON.parse(loggedInUser)
-    setUser(userData.role)
-    setloggedInUserData(userData.data)
-  }
-},[]);
+useEffect(() => {
+    const loggedInUser = localStorage.getItem('loggedInUser');
+    if (loggedInUser) {
+      const userData = JSON.parse(loggedInUser);
+      setUser(userData.role);
+      if (userData.role === 'employee') {
+        setloggedInUserData(userData.data);
+      }
+    }
+  }, []);
 
 const handleLogin=(email,password)=>{
     if(email=='admin@gmail.com'&& password=='123'){
-     setUser('admin')
-     localStorage.setItem('loggedInUser',JSON.stringify({role:'admin' }))
+        const adminData = { role: 'admin' };
+        setUser(adminData.role);
+     localStorage.setItem('loggedInUser',JSON.stringify({adminData }))
     
 }else if(authData){
     const employee=  authData.employees.find((e)=>email==e.email&&e.password==password)
     if(employee){
-    setUser('employee')
+        const employeeData = { role: 'employee', data: employee };
+        setUser(employeeData.role);
     setloggedInUserData(employee)
-    localStorage.setItem('loggedInUser',JSON.stringify({role:'employee',data:employee}))
+    localStorage.setItem('loggedInUser',JSON.stringify({employeeData,data:employee}))
      return;
 }
 
@@ -48,12 +52,12 @@ const handleLogin=(email,password)=>{
 
 
 
-    return (     <>
-   {!user ? <Login handleLogin={handleLogin} /> : null}
-   {user === "employee" ? <EmployeeDashboard data={loggedInUserData} /> : null}
-   {user === "admin" && <AdminDashboard />}
-
-    </>
-    )
-}
+return (     <>
+    {!user ? <Login handleLogin={handleLogin} /> : null}
+    {user === "employee" ? <EmployeeDashboard data={loggedInUserData} /> : null}
+    {user === "admin" && <AdminDashboard />}
+ 
+     </>
+     )
+ }
 export default App;
