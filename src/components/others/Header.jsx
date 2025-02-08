@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 // import { setLocalStorage } from '../../utils/localstorage';
 
-const Header=()=>{
+const Header=(props)=>{
  
 //  const [username,setUsername]=useState('')
 //  if(!data){
@@ -14,6 +15,7 @@ const Header=()=>{
 
 const logOutUser=()=>{
     localStorage.setItem('loggedInUser','')
+    props.changeUser('')
     // window.location.reload();
 }
     return(
