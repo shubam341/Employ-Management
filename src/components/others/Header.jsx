@@ -14,7 +14,7 @@ const Header=()=>{
 
 const logOutUser=()=>{
     localStorage.setItem('loggedInUser','')
-    window.location.reload();
+    // window.location.reload();
 }
     return(
         <div className='text-white flex items-end justify-between'>

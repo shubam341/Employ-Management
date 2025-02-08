@@ -54,8 +54,8 @@ const handleLogin=(email,password)=>{
 
 return (     <>
     {!user ? <Login handleLogin={handleLogin} /> : null}
-    {user === "employee" ? <EmployeeDashboard data={loggedInUserData} /> : null}
-    {user === "admin" && <AdminDashboard />}
+    {user === "employee" ? <EmployeeDashboard changeUser={setUser} data={loggedInUserData} /> : null}
+    {user === "admin" && <AdminDashboard  changeUser={setUser}/>}
  
      </>
      )
