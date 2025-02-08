@@ -8,10 +8,17 @@ const CreateTask =()=>{
     const [taskDate,setTaskDate]=useState('')
     const [asignTo,setAsignTO]=useState('')
     const [category,setCategory]=useState('')
+     const[task,settask]=useState([])
 
     const submitHandler=(e)=>{
         e.preventDefault()
-        console.log("Task Created")
+        setTaskDate("")
+        setAsignTO("")
+        setCategory("")
+        setTaskDescription("")
+        setTaskTitle("")
+
+        
     }
     return (
         <div id='tasklist' className='p-5 bg-[#1c1c1c] mt-7 rounded' >
