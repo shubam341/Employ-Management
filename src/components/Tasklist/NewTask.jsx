@@ -14,7 +14,7 @@ const NewTask=({data})=>{
       <h2 className=' text-white mt-5 text-2xl font-semibold'>{data.title}</h2>
          <p className=' mt-2 text-white text-sm'>{data.description}.</p>
       <div className="mt-4">
-        <button className="bg-blue-500 rounded font-medium py-1 px-2 text-xs">Accept Task</button>
+        <button className="w-full bg-blue-500 rounded font-medium py-1 px-2 text-xs">Accept Task</button>
       </div>
       </div>
     )

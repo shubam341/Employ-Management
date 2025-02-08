@@ -15,7 +15,7 @@ import React from "react";
                <p className=' mt-2 text-white text-sm'>{data.description}.</p>
            
             <div className='mt-2'>
-            <button className='w-full bg-green-500 rounded font-medium py-1 px-2 text-sm'>Failed</button>
+            <button className='w-full bg-green-500 rounded font-medium py-1 px-2 text-xs'>Failed</button>
          </div>
          </div>
     )
