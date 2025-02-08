@@ -17,7 +17,7 @@ const CreateTask =()=>{
 
     const submitHandler=(e)=>{
         e.preventDefault()
-      setNewTask({taskTitle,taskDescription,taskDate,category,ctive:false,newTask:true,failed:false,complets:false})
+      setNewTask({taskTitle,taskDescription,taskDate,category,active:false,newTask:true,failed:false,completed:false})
     const data=userData
    
 

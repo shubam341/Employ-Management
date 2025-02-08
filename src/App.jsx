@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-
 import React, { useContext, useEffect, useState, useSyncExternalStore } from 'react';
 import AdminDashboard from './components/Dashboard/AdminDashboard';
 import EmployeeDashboard from './components/Dashboard/EmployeeDashboard';
