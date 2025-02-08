@@ -148,9 +148,9 @@ const employees = [
         "category": "Finance",
         "active": false,
         "newtask": false,
-        "completed": true,
+        "completed": false,
         "failed": false,
-        "taskCount": { "active": 0, "newtask": 0, "completed": 1, "failed": 0}
+        "taskCount": { "active": 0, "newtask": 0, "completed": 0, "failed": 0}
       },
     
     ]
@@ -160,6 +160,7 @@ const employees = [
     "name": "Simran Kaur",
     "email": "employee5@example.com",
     "password": "123",
+    "taskCount": { "active": 1, "newtask": 0, "completed": 0, "failed": 0 },
     "tasks": [
       {
         "title": "Customer Support Training",
@@ -170,7 +171,7 @@ const employees = [
         "newtask": false,
         "completed": false,
         "failed": false,
-        "taskCount": { "active": 1, "newtask": 0, "completed": 0, "failed": 0 }
+       
       },
       {
         "title": "Product Testing",
