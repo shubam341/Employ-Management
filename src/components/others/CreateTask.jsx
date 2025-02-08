@@ -1,8 +1,11 @@
 
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { AuthContext } from '../../pages/AuthProvider';
+
 
 const CreateTask =()=>{
+  const [userData,setUserData]=useContext(AuthContext)
     const [taskTitle,setTaskTitle]=useState('')
     const [taskDescription,setTaskDescription]=useState('')
     const [taskDate,setTaskDate]=useState('')
@@ -10,18 +13,23 @@ const CreateTask =()=>{
     const [category,setCategory]=useState('')
      const[newTask,setNewTask]=useState({})
 
+     
+
     const submitHandler=(e)=>{
         e.preventDefault()
       setNewTask({taskTitle,taskDescription,taskDate,category,ctive:false,newTask:true,failed:false,complets:false})
-      const data=JSON.parse(localStorage.getItem('employees'))
-      
+    const data=userData.employees
+    console.log(data)  
+
       data.forEach(function(elem){
        if(asignTo==elem.name){
       elem.tasks.push(newTask)
-      console.log(elem)
+      elem.taskCount.newTask=elem.taskCount.newTask+1
+    
        }
       })
-      localStorage.setItem('employees',JSON.stringify(data))
+  
+     
 
       setTaskTitle('')
       setAsignTO('')

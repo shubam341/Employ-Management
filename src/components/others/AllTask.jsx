@@ -5,7 +5,7 @@ import { AuthContext } from '../../pages/AuthProvider';
 
 const AllTask=()=>{
 
-    const authData=useContext(AuthContext)
+    const [userData,setUserData]=useContext(AuthContext)
   
     return (
 <div id='tasklist' className='bg-[#1c1c1c] p-5 rounded text-white mt-5 '>
@@ -18,7 +18,7 @@ const AllTask=()=>{
 </div>
    
    <div className=' '>
-   {authData.employees.map(function(elem,idx){
+   {userData.employees.map(function(elem,idx){
 
 return  <div key={idx} className=' border-2 border-emerald-500 py-2  px-4 flex mb-2 justify-between rounded'>
 <h2 className='text-lg  w-1/5  text-white'>{elem.name}</h2>
