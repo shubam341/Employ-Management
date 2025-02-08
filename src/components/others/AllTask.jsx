@@ -1,4 +1,4 @@
-/* eslint-disable react/jsx-key */
+
 // eslint-disable-next-line no-unused-vars
 import React, { useContext } from 'react';
 import { AuthContext } from '../../pages/AuthProvider';
