@@ -18,8 +18,8 @@ const CreateTask =()=>{
     const submitHandler=(e)=>{
         e.preventDefault()
       setNewTask({taskTitle,taskDescription,taskDate,category,ctive:false,newTask:true,failed:false,complets:false})
-    const data=userData.employees
-    console.log(data)  
+    const data=userData
+   
 
       data.forEach(function(elem){
        if(asignTo==elem.name){
@@ -29,7 +29,8 @@ const CreateTask =()=>{
        }
       })
   
-     
+     setUserData(data)
+     console.log(data)
 
       setTaskTitle('')
       setAsignTO('')

@@ -2,21 +2,16 @@
 
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
-// import { setLocalStorage } from '../../utils/localstorage';
+
 
 const Header=(props)=>{
  
-//  const [username,setUsername]=useState('')
-//  if(!data){
-//     setUsername('Admin')
-//  }else{
-//     setUsername(data.firstName)
-//  }
+
 
 const logOutUser=()=>{
     localStorage.setItem('loggedInUser','')
     props.changeUser('')
-    // window.location.reload();
+    
 }
     return(
         <div className='text-white flex items-end justify-between'>

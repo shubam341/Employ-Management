@@ -1,4 +1,5 @@
-// eslint-disable-next-line no-unused-vars
+/* eslint-disable no-unused-vars */
+
 import React, { useContext, useEffect, useState, useSyncExternalStore } from 'react';
 import AdminDashboard from './components/Dashboard/AdminDashboard';
 import EmployeeDashboard from './components/Dashboard/EmployeeDashboard';
@@ -14,7 +15,7 @@ const App =()=>{
 //for handling login page
 const [user,setUser]=useState(null)
 const [loggedInUserData,setloggedInUserData]=useState(null)
-const authData=useContext(AuthContext);
+const [userData,setUserData]=useContext(AuthContext);
 
 useEffect(() => {
     const loggedInUser = localStorage.getItem('loggedInUser');
@@ -33,8 +34,8 @@ const handleLogin=(email,password)=>{
         setUser(adminData.role);
      localStorage.setItem('loggedInUser',JSON.stringify(adminData ))
     
-}else if(authData){
-    const employee=  authData.employees.find((e)=>email==e.email&&e.password==password)
+}else if(userData){
+    const employee=  userData.find((e)=>email==e.email&&e.password==password)
     if(employee){
         const employeeData = { role: 'employee', data: employee };
         setUser(employeeData.role);

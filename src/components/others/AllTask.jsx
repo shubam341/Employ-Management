@@ -1,5 +1,6 @@
+/* eslint-disable no-unused-vars */
 
-// eslint-disable-next-line no-unused-vars
+
 import React, { useContext } from 'react';
 import { AuthContext } from '../../pages/AuthProvider';
 
@@ -18,7 +19,7 @@ const AllTask=()=>{
 </div>
    
    <div className=' '>
-   {userData.employees.map(function(elem,idx){
+   {userData.map(function(elem,idx){
 
 return  <div key={idx} className=' border-2 border-emerald-500 py-2  px-4 flex mb-2 justify-between rounded'>
 <h2 className='text-lg  w-1/5  text-white'>{elem.name}</h2>
