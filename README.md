@@ -11,3 +11,9 @@ Responsive Design – Works flawlessly on all devices with Tailwind CSS.
 Frontend: React, JavaScript, HTML, Tailwind CSS
 State Management: React Hooks (useState, useEffect)
 Data Storage: localStorage
+
+ ◦ Developed a task management system with an admin dashboard for assigning and tracking tasks.
+ ◦ Built an employee dashboard allowing users to view, accept, and manage tasks efficiently.
+ ◦ Designed and styled the application with React and Tailwind CSS, ensuring a clean, modern, and responsive UI.
+ ◦ Designed and styled the application with React and Tailwind CSS, ensuring a clean, modern, and responsive UI.
+ ◦ Tech: HTML, CSS, React, Tailwind CSS.
